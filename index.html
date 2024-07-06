@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Lorenze!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(173, 216, 230, 0.8), rgba(255, 255, 255, 0.8));
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 600px; 
+            width: 90%; 
+            position: relative; 
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #6200ea;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #3700b3;
+        }
+        #confession {
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.8));
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+            margin-bottom: 20px;
+        }
+        #confession p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        #bg-video {
+            display: none; 
+            width: 100%; 
+            height: auto; 
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Do you like me?</h1>
+        <button id="yes" class="btn" onclick="showConfession()">Yes</button>
+        <button id="no" class="btn" onclick="moveButton()">No</button>
+        <div id="confession">
+            <p>Hi Lorenze,</p>
+            <p>I just wanted to let you know that ever since I saw you playing volleyball nung Founding Anniversary, you really caught my attention. I was amazed by every spike you made, and I also think you're really cute! Akala ko pa non 3rd year ka kasi kalaro mo sila Froi, pero potek, 1st year ka palang pala huhu. 😅</p>
+            <p>After that day, I couldn't stop thinking about you. Inistalk ko pa nga FB mo! Nakalagay kasi sa jersey mo "Espanola," edi ako todo hanap naman. HAHAHA! Ayun, I added you. Akala ko makakalimot din ako kasi parang malabo, pero nag-accept ka ng friend request ko HAHAHAHA. </p>
+            <p>Since then, we started talking. I thought nga mang-snob ka ng chat ko eh. Sometimes, nahihiya ako magchat kasi I don't want you to feel annoyed sakin. I really want to know you more, Lorenze. Sana maging close pa tayo and bahala na kung anong mangyari! Himala, dami kong time ngayon. HAHAHA! Pero kung para sa'yo, I will always make time for you. 😊 Hirap naman mag emoji sa desktop. 😅 Always take care, cutie!</p>
+            <p>Pakinggan mo 'to, maganda hihi</p>
+        </div>
+        <video id="bg-video" controls>
+            <source src="y2mate.com - The Book of Life I Love You Too Much Clip HD_360p (1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function showConfession() {
+            document.getElementById('confession').style.display = 'block'; 
+            document.getElementById('yes').style.display = 'none'; 
+            document.getElementById('no').style.display = 'none'; 
+            document.getElementById('bg-video').style.display = 'block'; 
+        }
+
+        function moveButton() {
+            const noButton = document.getElementById('no');
+            const maxOffset = 150; 
+            const randomX = (Math.random() - 0.5) * 2 * maxOffset;
+            const randomY = (Math.random() - 0.5) * 2 * maxOffset;
+            noButton.style.position = 'absolute';
+            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+    </script>
+</body>
+</html>
+
